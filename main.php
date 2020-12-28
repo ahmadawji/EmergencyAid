@@ -21,14 +21,9 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
         $r=mysqli_fetch_array($result);
         $role=$r['role'];
         if($role ==1 ){
-            $_SESSION['username']=$r['username'];
+            $_SESSION['adminusername']=$r['username'];
+            $_SESSION['role']=$r['role'];
             header("location:profileadmin.php?"); // Redirecting To Other Page
-        }
-        else if($role ==2){
-            include 'hr.php';
-        }
-        else {//matching is not correct
-            include 'employee.php';
         }
     
     } 

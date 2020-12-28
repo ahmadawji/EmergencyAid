@@ -4,6 +4,11 @@ session_start()
 
 
 <?php
+if (!isset($_SESSION['role'])||$_SESSION['role']!=1){
+  header('Location: main.php');
+  exit;
+}
+
 require 'connection.php';
 $error='';
 $id = $_SESSION['hosid'];
@@ -51,9 +56,9 @@ if ($row!=1) {
 <h2 style="font-size: 2em; float:left;">Update Hospital</h2>
     <form  action="" method="POST">
         <label for="hn" >Hospital Name</label>
-        <input type="text" id="hn" name="hospitalname" placeholder="username" value="<?php echo $r['hname']?>">
+        <input type="text" id="hn" name="hospitalname" value="<?php echo $r['hname']?>">
         <label for="ct">City</label>
-        <input type="text" id="ct" name="city" placeholder="password"  value="<?php echo $r['city']?>">
+        <input type="text" id="ct" name="city"  value="<?php echo $r['city']?>">
         <input type="submit" name="update" value="Update">
     </form>
     <div>

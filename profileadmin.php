@@ -7,7 +7,17 @@ session_start();
 /* 
 delete for deleting hospitals
 delete1 for deleting managers 
-delete2 for deleting nurses */
+delete2 for deleting nurses 
+
+update for updating hospitals 
+update1 for updating managers
+update2 for updating nurses 
+*/
+
+if (!isset($_SESSION['role'])||$_SESSION['role']!=1){
+  header('Location: main.php');
+  exit;
+}
 
 if(ISSET($_POST['delete'])){
 
@@ -54,6 +64,19 @@ if(ISSET($_POST['update'])){
 
 }
 
+$_SESSION['username']=NULL;
+if(ISSET($_POST['update1'])){
+  $_SESSION["username"] = $_POST['update1'];
+  header("Location: updateusers.php");
+
+}
+
+if(ISSET($_POST['update2'])){
+  $_SESSION["username"] = $_POST['update2'];
+  header("Location: updateusers.php");
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +94,7 @@ if(ISSET($_POST['update'])){
     <div class="header"> 
         <h1 class="Uicon">Emergency Aid</h1>
           <div style="float:right">
-            <?php echo 'Welcome '.$_SESSION['username']?>
+            <?php echo 'Welcome '.$_SESSION['adminusername']?>
           </div>
     </div>
 
@@ -99,8 +122,8 @@ if(ISSET($_POST['update'])){
             <th>Hospital Name</th>            
             <th>City</th>
           </tr>
-
           <?php
+          //Hospital's Info 
           require 'connection.php';
 
 
@@ -141,6 +164,7 @@ if(ISSET($_POST['update'])){
           </tr>
 
           <?php
+          //Manager's info
           require 'connection.php';
 
 
@@ -151,7 +175,7 @@ if(ISSET($_POST['update'])){
             while( $row = mysqli_fetch_array($result) ) {
               echo "<tr>";
               echo "<form method='POST' action=''>";
-              echo "<td><button class='update' type='submit' name='update' value='".$row['username']."'><i class='fas fa-user-edit'></i></button></a></td>";
+              echo "<td><button class='update' type='submit' name='update1' value='".$row['username']."'><i class='fas fa-user-edit'></i></button></a></td>";
               echo "<td> <button class='delete' type='submit' name='delete1' value='".$row['username']."'><i class='fas fa-trash-alt'></i></button></td>";
             	echo "<td>" . $row['fname'] . "</td>";
             	echo "<td>" . $row['lname'] . "</td>";
@@ -185,7 +209,7 @@ if(ISSET($_POST['update'])){
 
           <?php
           require 'connection.php';
-
+            //Nurses Info
 
             $query = "SELECT username,fname,lname,users.city,sex,whours,hosp.hname from users left join hosp on users.hid=hosp.hid where users.role=3";
 
@@ -196,7 +220,7 @@ if(ISSET($_POST['update'])){
             while( $row = mysqli_fetch_array($result)) {
               echo "<tr>";
               echo "<form method='POST' action=''>";
-              echo "<td><button class='update' type='submit' name='update' value='".$row['username']."'><i class='fas fa-user-edit'></i></button></a></td>";
+              echo "<td><button class='update' type='submit' name='update2' value='".$row['username']."'><i class='fas fa-user-edit'></i></button></a></td>";
               echo "<td> <button class='delete' type='submit' name='delete2' value='".$row['username']."'><i class='fas fa-trash-alt'></i></button></td>";
             	echo "<td>" . $row['fname'] . "</td>";
             	echo "<td>" . $row['lname'] . "</td>";
