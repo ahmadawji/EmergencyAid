@@ -102,8 +102,8 @@ if(ISSET($_POST['update2'])){
       <div class="dropdown">
          <button class="dropbtn">Add Member</button>
            <div class=" dropdown-content">
-                <a href="#">Add Nurse</a>
-                <a href="#">Add Manager</a>
+                <a href="addadmin.php">Add Admin</a>
+                <a href="#">Add User</a>
                 <a href="#">Add Hospital</a>
             </div>
       </div>

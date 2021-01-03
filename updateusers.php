@@ -57,7 +57,7 @@ if ($row!=1) {
 <h1 class="icon">EmergencyAid</h1>
 </div>
 
-<h2 style="font-size: 2em; float:left;">Update Hospital</h2>
+<h2 style="font-size: 2em; float:left;">Update Users</h2>
     <form  action="" method="POST">
         <label for="fn" >First Name</label>
         <input type="text" id="fn" name="firstname"  value="<?php echo $r['fname']?>">
