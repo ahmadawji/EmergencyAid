@@ -7,8 +7,7 @@ session_start();
 
 <?php
 	session_unset();
-	print_r($_SESSION);
-    header("location:main.php?");
+    header("location:index.php?");
 
 ?>
 </body>

@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    }
+    body {
+      font-family: Arial;
+      margin: 0;
+    }
+    .main {
+      width: 100%;
+      height: 100%;
+      margin-top:30px;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .header{
+      margin-top: 50px;
+      padding: 30px;
+      text-align: center;
+      background-color: #a4161a;
+      font-size: 30px;
+      border-radius: 5px;
+      color:#ffffff ;
+      width: 100%;
+      height: 30%;
+    }
+
+    .content {padding:20px;}
+
+
+    .icon{
+    padding-top: 20px;
+    }
+
+    .Uicon{
+    float: left;
+    font-size: 15px;
+    }
+    
+ 
+    
+    label{
+      display:block;
+    }
+    
+    input[type=text]{
+        display:block;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    
+    
+      input[type=submit], input[type=button]{
+        display:block;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px auto;
+        border: 1px solid #ccc;
+        background-color: #a4161a;
+        color:white;
+        border-radius: 4px;
+      }
+       select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      
+
+      
+      .card .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: 30%;
+        height: 80%;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+      }
+      .ManNurInfo{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width:65%;
+        height:80%;
+        margin: 0 auto;
+        text-align: center;
+        font-family: arial;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      tr{
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color:#a4161a;
+        color:white;
+        ;
+      }
+      .title {
+        color: grey;
+        font-size: 18px;
+      }
+      
+      button{
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
+     #signout{
+        background-color: rgb(194, 0, 0);
+      }
+      #signout a{
+        color: white;
+
+      }
+      input[type=file]{
+      color: transparent;
+      }
+      input[type=file]:hover{
+        opacity: 0.7;
+        }
+      input[type=file]::-webkit-file-upload-button {
+        visibility: hidden;
+        width:100%;
+        outline: none;
+      }
+      input[type=file]::before {
+        content: 'Choose photo to upload';
+        border: none;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
+      input[type=file]:active,  input[type=file]:focus {
+        outline: none;
+      }
+      
+      
+      a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+      }
+      
+      button:hover, a:hover {
+        opacity: 0.7;
+      }
+      
+      .headContainer{
+        height: 30%;
+        width:90%;
+        margin: 0 auto;
+      }
+
+
+      
+

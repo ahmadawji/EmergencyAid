@@ -15,7 +15,7 @@ update2 for updating nurses
 */
 
 if (!isset($_SESSION['role'])||$_SESSION['role']!=1){
-  header('Location: main.php');
+  header('Location: index.php');
   exit;
 }
 
@@ -84,9 +84,9 @@ if(ISSET($_POST['update2'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin1.css">
     <script src="https://kit.fontawesome.com/63cdf32143.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/admin1.css">
+    <title>Admin's Page</title>
 </head>
 <body>
 <div class="main">
@@ -103,8 +103,8 @@ if(ISSET($_POST['update2'])){
          <button class="dropbtn">Add Member</button>
            <div class=" dropdown-content">
                 <a href="addadmin.php">Add Admin</a>
-                <a href="#">Add User</a>
-                <a href="#">Add Hospital</a>
+                <a href="adduser.php">Add User</a>
+                <a href="addhosp.php">Add Hospital</a>
             </div>
       </div>
       <div class="navitem signout">
@@ -156,6 +156,7 @@ if(ISSET($_POST['update2'])){
           <tr>
             <th>Edit</th>
             <th>Delete</th>
+            <th>User Image</th>
             <th>First name</>
             <th>Last name</th>
             <th>City</th>
@@ -168,7 +169,7 @@ if(ISSET($_POST['update2'])){
           require 'connection.php';
 
 
-            $query = "SELECT username,fname, lname, users.city, sex, hosp.hname from users inner join hosp on users.hid=hosp.hid and users.role=2";
+            $query = "SELECT username,fname, lname, users.city, sex, profileImag, hosp.hname from users inner join hosp on users.hid=hosp.hid and users.role=2";
 
             $result = mysqli_query($conn,$query);
 
@@ -177,6 +178,7 @@ if(ISSET($_POST['update2'])){
               echo "<form method='POST' action=''>";
               echo "<td><button class='update' type='submit' name='update1' value='".$row['username']."'><i class='fas fa-user-edit'></i></button></a></td>";
               echo "<td> <button class='delete' type='submit' name='delete1' value='".$row['username']."'><i class='fas fa-trash-alt'></i></button></td>";
+              echo "<td><div class='ProImaCon'><img class='ProIma' src='$row[profileImag]' alt=''></div></td>";
             	echo "<td>" . $row['fname'] . "</td>";
             	echo "<td>" . $row['lname'] . "</td>";
               echo "<td>" . $row['city'] . "</td>";
@@ -199,6 +201,7 @@ if(ISSET($_POST['update2'])){
           <tr>
             <th>Edit</th>
             <th>Delete</th>
+            <th>User Image</th>
             <th>First name</th>
             <th>Last name</th>
             <th>City</th>
@@ -211,7 +214,7 @@ if(ISSET($_POST['update2'])){
           require 'connection.php';
             //Nurses Info
 
-            $query = "SELECT username,fname,lname,users.city,sex,whours,hosp.hname from users left join hosp on users.hid=hosp.hid where users.role=3";
+            $query = "SELECT username,fname,lname,users.city,sex,whours,hosp.hname,profileImag from users left join hosp on users.hid=hosp.hid where users.role=3";
 
 
             $result = mysqli_query($conn,$query);
@@ -222,7 +225,8 @@ if(ISSET($_POST['update2'])){
               echo "<form method='POST' action=''>";
               echo "<td><button class='update' type='submit' name='update2' value='".$row['username']."'><i class='fas fa-user-edit'></i></button></a></td>";
               echo "<td> <button class='delete' type='submit' name='delete2' value='".$row['username']."'><i class='fas fa-trash-alt'></i></button></td>";
-            	echo "<td>" . $row['fname'] . "</td>";
+              echo "<td><div class='ProImaCon'><img class='ProIma' src='".$row['profileImag']."' alt='User's profile image'></div></td>";
+              echo "<td>" . $row['fname'] . "</td>";
             	echo "<td>" . $row['lname'] . "</td>";
               echo "<td>" . $row['city'] . "</td>";
               echo "<td>" . $row['sex'] . "</td>";

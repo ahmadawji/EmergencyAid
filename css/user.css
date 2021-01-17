@@ -55,7 +55,7 @@
       }
     
     
-      input[type=submit]{
+      input[type=submit], input[type=button]{
         display:block;
         width: 80%;
         padding: 12px 20px;
@@ -75,3 +75,20 @@
       .gender {
         margin-top:10px ;
       }
+
+      .role label{
+        margin-top:10px ;
+        display: inline;
+      }
+
+      .role {
+        margin-top:10px ;
+      }
+
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+

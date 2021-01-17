@@ -8,14 +8,14 @@ $sex=$_POST['sex'];
 $bd=$_POST['bd'];
 $city=$_POST['ct'];
 $role=$_POST['role'];
-$query="INSERT INTO `users` (`username`, `password`, `fname`, `lname`, `sex`, `bdate`, `city`, `whours`, `role`, `hid`) VALUES('$un', '$pw', '$fn', '$ln', '$sex', '$bd', '$ct', NULL, $role, NULL)";
-$result=mysqli_query($query, $conn);
-$affected=mysqli_affected_rows($conn);
-if(affected>0){
-echo ("The insertion of admin '$fn' '$ln' is well done.");
+$hid=$_POST['hid'];
+$query="INSERT INTO `users` (`username`, `password`, `fname`, `lname`, `sex`, `bdate`, `city`, `profileImag`, `whours`, `role`, `hid`) VALUES('$un', '$pw', '$fn', '$ln', '$sex', '$bd', '$city','ProfileImag/profileImag.png', NULL, $role, '$hid')";
+$result=mysqli_query($conn,$query);
+if(mysqli_affected_rows($conn)>0){
+echo "success!";
 }
 else{
-echo mysqli_error($conn);
+echo mysqli_errno($conn);
 }
 
 

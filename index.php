@@ -25,8 +25,16 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
             $_SESSION['role']=$r['role'];
             header("location:profileadmin.php?"); // Redirecting To Other Page
         }
-    
+        else if ($role==2){
+            $_SESSION['fName']=$r['fname'];
+            $_SESSION['lName']=$r['lname'];
+            $_SESSION['managUsername']=$r['username'];
+            $_SESSION['managerCity']=$r['city'];
+            $_SESSION['hid']=$r['hid'];
+            $_SESSION['role']=$r['role'];
+            header("location:profileManager.php?");  
     } 
+}
     else{
         $error = "Username or Password is invalid";
     }
@@ -40,7 +48,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="css/style1.css">
     <title>LogIn</title>
 </head>
 <body>

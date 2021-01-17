@@ -1,6 +1,6 @@
 <?php
 require 'connection.php';
-$query='Select city from hosp group by city';
+$query='Select hid, hname from hosp';
 $result=mysqli_query($conn, $query);
 $numrows= mysqli_affected_rows($conn);
 if ($numrows>0){
@@ -13,8 +13,8 @@ if ($numrows>0){
 }
 
 
-$myCities = json_encode($myArray);
+$myHosp = json_encode($myArray);
 
-echo $myCities;
+echo $myHosp;
 
 ?>

@@ -16,17 +16,17 @@ if (!isset($_SESSION['role'])||$_SESSION['role']!=1){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/user.css">
-    <script src="adminData.js"></script>
+    <script src="userData.js"></script>
     <title>Add Admin</title>
 </head>
-<body onload="loadData()">
+<body onload="loadData()" >
 <div class="main">
     <div class="header">
     <h1 class="icon">EmergencyAid</h1>
     </div>
         <div>
                 <form class="log"  >
-                    <h2 style="font-size: 2em;">Insert</h2>
+                    <h2 style="font-size: 2em;">Add User</h2>
                     <label for="fn" >First Name</label>
                     <input type="text"  placeholder="first name" name="fname"  id="fn">
                     <label for="ln" >Last Name</label>
@@ -44,15 +44,33 @@ if (!isset($_SESSION['role'])||$_SESSION['role']!=1){
                     <Select id="ct">
                         <option value="s">Select city</option>
                     </Select>
+
+
+                    <div class="role">
+                    <h3>Manger or Nurse?</h3>
+                    <input type="radio" id="mang" name="role" checked value="2">
+                    <label for="mang">Manager</label><br>
+                    <input type="radio" id="nrs" name="role" value="3"> 
+                    <label for="nrs">Nurse</label><br>
+                    </div>
+
+                    <br>
+
                     <div class="gender">
+                    <h3>Gender:</h3>
                     <input type="radio" id="male" name="gender" checked value="M">
                     <label for="male">Male</label><br>
                     <input type="radio" id="female" name="gender" value="F"> 
                     <label for="female">Female</label><br>
-                    <input type="text" class="role" style="display:none" value="1">
-                    <input type="text" class="hid" style="display:none" value="-1">
-                    <input type="button" onclick="insertAdminData()" value="Insert data">
                     </div>
+                    <br>
+
+                    
+                    <label for="hos">Assign hospital to the user:</lable><br>
+                    <select id ="hos" class="hid" style="width:40%" size='5'>
+                    </select>
+
+                    <input type="button" onclick="insertUserData()" value="Insert data">
                     <p class="alert"></p>
                 </form>
                     <br>
