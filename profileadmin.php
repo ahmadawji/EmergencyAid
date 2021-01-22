@@ -44,11 +44,11 @@ if(ISSET($_POST['delete1'])){
     echo "Error deleting record: " . mysqli_error($conn);
   }
 }
-if(ISSET($_POST['delete2'])){
 
+if(ISSET($_POST['delete2'])){
   $username = $_POST['delete2'];
   require 'connection.php';
-  $query = "delete from users where hid ='$username'";
+  $query = "delete from users where username ='$username'";
   $res = mysqli_query($conn,$query);
   $row=mysqli_affected_rows($conn);
 

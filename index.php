@@ -73,7 +73,16 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
     </div>
 </div>
 
-
+<div style="width:50%">
+<h1>Project done by Ahmad Awji id:31730414 </h1>
+    <h2>What is this project?</h2>
+    <p style="font-weight:bold">Its a project that allows an admin to create, read, update, and delete all kind of users on the system.</p>
+    <p style="font-weight:bold">It allows user with role '2' which is an HR at a hospital to look for nurses in the hospital's area and assign a nurse in the case of emergency if they are out of nurses and they need more nurses to help them.</p>
+    <ul>
+        <li>To login as an admin:<br> username:admin  password: admin</li>
+        <li>To login as hospital HR :<br> username:aliawji  password: 123</li>
+    </ul>
+</div>
  </div>
 </body>
 </html>
